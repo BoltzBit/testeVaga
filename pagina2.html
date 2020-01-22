@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="user">
+        <ul id="usuario">
+
+        </ul>
+    </div>
+    <div class="agradecer">
+        <p>Agradecemos o Contato!!</p>
+    </div>
+</body>
+<script type="text/javascript">
+    let cadastro = {
+        name:localStorage.getItem("name"),
+        tel:localStorage.getItem("tel"),
+        mail:localStorage.getItem("mail"),
+        msg:localStorage.getItem("msg"),
+    }
+
+    function userCad(){
+        let divUser = document.querySelector('#user')
+        let usuario = document.querySelector('#usuario')
+
+
+        const liName = document.createElement('li')
+        const liTel = document.createElement('li')
+        const liMail = document.createElement('li')
+        const liMsg = document.createElement('li')
+
+        liName.innerHTML = 'Name: ' + cadastro.name
+        liTel.innerHTML = 'Tel: ' + cadastro.tel
+        liMail.innerHTML = 'Email: ' + cadastro.mail
+        liMsg.innerHTML = 'Mensagem: ' + cadastro.msg
+
+        usuario.appendChild(liName)
+        usuario.appendChild(liTel)
+        usuario.appendChild(liMail)
+        usuario.appendChild(liMsg)
+
+        divUser.appendChild(usuario)
+    }
+
+    userCad()
+</script>
+</html>
